@@ -31,7 +31,6 @@ from collections import defaultdict
 import csv
 import sys
 
-
 # =============================================================================
 def print_usage():
    
@@ -53,7 +52,6 @@ def print_usage():
     print '        outfile_name : results will be saved under this file name'
     print '                       by default the outfile_name is set to "first_n_added_nodes_weight_alpha.txt"'
     print ' '
-
 
 # =============================================================================
 def check_input_style(input_list):
