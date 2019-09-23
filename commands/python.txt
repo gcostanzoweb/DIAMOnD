@@ -1,0 +1,11 @@
+#Generate the network from the downloaded .tsv
+py -3 .\create_PPI_from_tsv.py ./CROHN/CROHN_dataset.tsv ./CROHN/CROHN_network.txt
+
+#Generate results for old algorithm
+py -3 .\DIAMOnD.py ./CROHN/CROHN_network.txt ./CROHN/CROHN_SEED.txt 100 3 ./CROHN/_old_CROHN_res.txt
+
+#Generate results for new algorithm
+py -3 .\DIAMOnD_new.py ./CROHN/CROHN_network.txt ./CROHN/CROHN_SEED_normalized.txt 100 3 FALSE ./CROHN/_new_CROHN_res.txt
+
+#Execute comparison between old algorithm's and new algorithm's results
+py -3 .\compare_algos.py ./CROHN/_old_CROHN_res.txt ./CROHN/_new_CROHN_res.txt ./CROHN/CROHN_nodes_with_score.txt
